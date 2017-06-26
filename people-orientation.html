@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>人群定向</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-img"><img src="img/logo.png" alt=""></div>
+            </div>
+            <div class="header-in">
+                <p class="user">口袋小鸟</p>
+                <p class="exit"><i class="iconfont icon-xiaoxi"></i>消息</p>
+                <p class="exit"><i class="iconfont icon-tuichu"></i>退出</p>
+            </div>
+        </div>
+        <div class="movable">
+            <div class="fixed-nav">
+                <div class="nav">
+                    <div>
+                        <a href="index.html"><i class="iconfont icon-shouye01"></i><p>首页</p></a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <i class="iconfont icon-jingzhuntoufang"></i>
+                            <p>惊喜投放</p>
+                        </a>
+                        <ul class="second-nav">
+                            <li><a href="activity-manage.html">活动管理</a></li>
+                            <li><a href="mer-control.html">商品管理</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <i class="iconfont icon-tongji"></i>
+                            <p>统计报表</p>
+                        </a>
+                        <ul class="second-nav">
+                            <li><a href="effect-analysis.html">投放效果分析</a></li>
+                            <li><a href="rank-analysis.html">投放排行分析</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <i class="iconfont icon-renqun"></i>
+                            <p>人群管理</p>
+                        </a>
+                        <ul class="second-nav">
+                            <li><a class="active" href="people-orientation.html">人群定向</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <i class="iconfont icon-guanli"></i>
+                            <p>管理</p>
+                        </a>
+                        <ul class="second-nav">
+                            <li><a href="adver-manage.html">广告主管理</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab tab-slide">
+                <ul class="tab-header">
+                    <li>新建定向人群</li>
+                    <li class="tab-click">所有定向人群</li>
+                </ul>
+                <div class="tab-con">
+                    <!-- 新建定向人群 -->
+                    <div class="movable-con">
+                        <!--表单-->
+                        <form class="form-group y34-form y15-form">
+                            <h3>用户基本信息</h3>
+                            <div class="y3-tit3">
+                                <div class="form-line">
+                                    <label>性别：</label>
+                                    <div class="radio-wrap">
+                                        <div>
+                                            <label>
+                                                <input type="radio" name="sex" checked> 不限
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label>
+                                                <input type="radio" name="sex"> 男
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label>
+                                                <input type="radio" name="sex"> 女
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-line">
+                                    <label>年龄：</label>
+                                    <div class="radio-wrap">
+                                        <div>
+                                            <label>
+                                                <input type="radio" name="age"> 不限
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label>
+                                                <input type="radio" name="age" checked> 自定义
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="radio-wrap y15-child">
+                                        <div>
+                                            <label>
+                                                <input type="checkbox" name="ages"> 20岁以下
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label>
+                                                <input type="checkbox" name="ages" checked> 20岁-30岁
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label>
+                                                <input type="checkbox" name="ages"> 30岁-40岁
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label>
+                                                <input type="checkbox" name="ages"> 40岁以上
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-line">
+                                    <label>学历：</label>
+                                    <div class="radio-wrap">
+                                        <div>
+                                            <label>
+                                                <input type="radio" name="record" checked> 不限
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label>
+                                                <input type="radio" name="record"> 自定义
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="radio-wrap y15-child">
+                                        <div>
+                                            <input type="checkbox" name="">
+                                            <label>博士</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" name="">
+                                            <label>硕士</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" name="">
+                                            <label>本科</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" name="">
+                                            <label>高中</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-line">
+                                    <label>身份：</label>
+                                    <div class="radio-wrap">
+                                        <div>
+                                            <label>
+                                                <input type="radio" name="status" checked> 不限
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label>
+                                                <input type="radio" name="status"> 自定义
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="radio-wrap y15-child">
+                                        <div>
+                                            <input type="checkbox" name="">
+                                            <label>学生</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" name="">
+                                            <label>教师</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" name="">
+                                            <label>白领</label>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" name="">
+                                            <label>外来务工</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3>商业兴趣爱好</h3>
+                            <div class="y3-tit2">
+                                <div class="form-line">
+                                    <label>投放媒体：</label>
+                                    <div class="radio-wrap">
+                                        <div>
+                                            <label>
+                                                <input type="radio" name="medium"> 不限
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label>
+                                                <input type="radio" name="medium" checked> 自定义
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="y15-child box-padding-repair">
+                                        <div class="box">
+                                            <p>选择区域</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3>定向基础信息</h3>
+                            <div class="y3-tit3">
+                                <div class="form-line">
+                                    <label for="">保存定向：</label>
+                                    <div class="radio-wrap repair-checkbox-inpeople">
+                                        <div>
+                                            <input type="checkbox" name="" checked>
+                                            <label>保存并关联以上定向条件</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-line">
+                                    <label for="">人群名称：</label>
+                                    <input class="form-input" type="text">
+                                </div>
+                                <div class="form-line">
+                                    <label for="">人群描述：</label>
+                                    <textarea class="form-textarea" name=""></textarea>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="btn-group y15-btn">
+                            <button class="btn btn-orange" type="button">保存</button>
+                            <button class="btn btn-orange" type="button">提交</button>
+                        </div>
+                    </div>
+                    <!-- 所有定向人群 -->
+                    <div class="movable-con display-block">
+                        <!--表单-->
+                        <form class="form-group y4-form clearfix">
+                            <div class="form-line fl y4-form-line1">
+                                <label for="">关键词：</label>
+                                <input class="form-input" type="text" placeholder="请输入人群编号或者名称">
+                            </div>
+                            <div class="form-line fl y4-form-line2">
+                                <label for="">状态：</label>
+                                <div class="smalle-select status-select" id="select" ></div>
+                            </div>
+                            <div class="form-line fl y4-form-line2">
+                                <button class="btn btn-orange" type="button">查询</button>
+                            </div>
+                        </form>
+                        <!--表格-->
+                        <div class="table-con">
+                            <table id="y1table2" class="datatable table-box"></table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--javascript-->
+    <script src=./js/jquery-1.10.2.min.js></script>
+    <script src="./js/jquery.placeholder.min.js"></script>
+    <script src="js/select.js"></script>
+    <script src="js/tab.js"></script>
+    <script src="js/pages.js"></script>
+    <!--[if IE 8]>
+        <script src="js/PIE.js"></script>
+        <script src="js/suitableIe.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+
+    $(function() {
+
+        $('input, textarea').placeholder();
+        var x = DiySelect({
+            selector: $('#select'),
+            tip:'所有',       
+            series: [{
+                text: '所有',
+                val: '1',
+            }, {
+                text: '所有',
+                val: '2',
+            }, {
+                text: '所有',
+                val: '3',
+            }, {
+                text: '所有',
+                val: '4',
+            }]
+        })
+
+        //所有定向人群表格
+        var y1data = [];
+        for (var i = 0; i < 50; i++) {
+            y1data[i] = {
+                id: i + 1,
+                name1: "口袋小鸟",
+                name2: "安溪铁观音",
+                name3: "100000",
+                name4: "56.3%",
+                opt: '<div class="dropdwon dropdwon-table"><div class="dropdwon-header"><p class="dropdwon-text">查看</p><i class="iconfont icon-sanjiao"></i></div>'
+            };
+        }
+        var cs = new table({
+            "tableId": "y1table2", //必须
+            "headers": ["序号", "广告主", "活动名称", "领奖数(点击)", "点击率", "操作"], //必须
+            "data": y1data, //必须
+            "displayNum": 8, //必须  默认 10，每页多少数
+            "groupDataNum": 10 //可选  默认 10,最大页数
+        });
+
+    })
+    </script>
+</body>
+
+</html>

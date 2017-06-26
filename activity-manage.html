@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="zh-CH">
+
+<head>
+    <meta charset="UTF-8">
+    <title>活动管理</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <link rel="stylesheet" href="css/jquery.datetimepicker.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+    /*        写在页面里提醒人以后命名时千万不要忘记改
+*/
+    
+    #select2,
+    #select4 {
+        width: 100px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-img"><img src="img/logo.png" alt=""></div>
+            </div>
+            <div class="header-in">
+                <p class="user">口袋小鸟</p>
+                <p class="exit"><i class="iconfont icon-xiaoxi"></i>消息</p>
+                <p class="exit"><i class="iconfont icon-tuichu"></i>退出</p>
+            </div>
+        </div>
+        <div class="movable">
+            <div class="fixed-nav">
+                <div class="nav">
+                    <div>
+                        <a href="index.html"><i class="iconfont icon-shouye01"></i><p>首页</p></a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <i class="iconfont icon-jingzhuntoufang"></i>
+                            <p>惊喜投放</p>
+                        </a>
+                        <ul class="second-nav">
+                            <li><a class="active" href="activity-manage.html">活动管理</a></li>
+                            <li><a href="mer-control.html">商品管理</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <i class="iconfont icon-tongji"></i>
+                            <p>统计报表</p>
+                        </a>
+                        <ul class="second-nav">
+                            <li><a href="effect-analysis.html">投放效果分析</a></li>
+                            <li><a href="rank-analysis.html">投放排行分析</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <i class="iconfont icon-renqun"></i>
+                            <p>人群管理</p>
+                        </a>
+                        <ul class="second-nav">
+                            <li><a href="people-orientation.html">人群定向</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <i class="iconfont icon-guanli"></i>
+                            <p>管理</p>
+                        </a>
+                        <ul class="second-nav">
+                            <li><a href="adver-manage.html">广告主管理</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab tab-slide">
+                <ul class="tab-header">
+                    <li class="tab-click">新增惊喜活动</li>
+                    <li>推广中活动</li>
+                    <li>所有活动</li>
+                </ul>
+                <div class="tab-con">
+                    <!-- 新增惊喜活动 -->
+                    <div class="movable-con display-block">
+                        <!--表单-->
+                        <form class="form-group y3-form">
+                            <h3>基本信息</h3>
+                            <div class="y3-tit1">
+                                <div class="form-line">
+                                    <label for="">商品名称：</label>
+                                    <input class="form-input" type="text">
+                                </div>
+                                <div class="form-line">
+                                    <label for="">归属广告主：</label>
+                                    <div id="select1"></div>
+                                </div>
+                                <div class="form-line">
+                                    <label for="">投放时间周期：</label>
+                                    <div>
+                                        <div class="calendar-wrap">
+                                            <input class="form-input form-calendar y3-time y3-startTime" type="text" name="" placeholder="起始时间">
+                                        </div>
+                                        <p class="">到</p>
+                                        <div class="calendar-wrap">
+                                            <input class="form-input form-calendar y3-time y3-endTime" type="text" name="" placeholder="结束时间">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-line">
+                                    <label for="">投放时段：</label>
+                                    <div class="radio-wrap">
+                                        <div>
+                                            <label>
+                                                <input type="checkbox" name=""> 全时间段</label>
+                                        </div>
+                                        <div>
+                                            <label>
+                                                <input type="checkbox" name="" checked> 特定时间段</label>
+                                        </div>
+                                        <div>
+                                            <input class="form-input form-calendar y3-time2 y3-startTime2" type="text" name="" placeholder="开始" value="11:00">
+                                        </div>
+                                        <div class="y3-line">一</div>
+                                        <div>
+                                            <input class="form-input form-calendar y3-time2 y3-endTime2" type="text" name="" placeholder="结束" value="11:00">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3>媒体及规格</h3>
+                            <div class="y3-tit2">
+                                <div class="form-line">
+                                    <label for="">投放媒体：</label>
+                                    <div>
+                                        <ul class="form-card-wrap clearfix">
+                                            <li>
+                                                <div class="form-card card-imgcon active js-MultiAudio">
+                                                    <img src="img/u365.png" alt="">
+                                                    <p>手机端大转盘</p>
+                                                </div>
+                                                <span>日均曝光容量：200万</span>
+                                            </li>
+                                            <li>
+                                                <div class="form-card card-imgcon js-MultiAudio">
+                                                    <img src="img/u365.png" alt="">
+                                                    <p>PC端大转盘</p>
+                                                </div>
+                                                <span>日均曝光容量：200万</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="form-line">
+                                    <label for="">投放商品：</label>
+                                    <!-- 默认展示选择商品 -->
+                                    <div class="send-goods">
+                                        <ul class="form-card-wrap y3-box2 clearfix">
+                                            <li>
+                                                <div class="form-card active">
+                                                    <i class="iconfont icon-radio_true_disable"></i>
+                                                    <p>从商品库中选择</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-card">
+                                                    <i class="iconfont icon-weibiaoti1"></i>
+                                                    <p>新增商品信息</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- 弹框选中后显示选择后的商品 -->
+                                    <div class="send-goods-then">
+                                        <div class="show-goods clearfix">
+                                            <div class="boxl fl">
+                                                <img src="img/y16coupon.fw.png" alt="">
+                                            </div>
+                                            <div class="boxr fl">
+                                                <p class="p1">坚果5元代金劵</p>
+                                                <p class="p2">口袋小鸟</p>
+                                                <p class="p3">手机端素材</p>
+                                                <i class="iconfont icon-gou"></i>
+                                                <p class="p4">PC端素材</p>
+                                                <i class="iconfont icon-gou"></i>
+                                                <div class="btn-group">
+                                                    <button class="btn btn-orange js-delect-goods" type="button">删除</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3>人群定向</h3>
+                            <div class="y3-tit3">
+                                <div class="form-line">
+                                    <label for="">投放时段：</label>
+                                    <div class="radio-wrap">
+                                        <div>
+                                            <label>
+                                                <input type="checkbox" name="" checked> 全省</label>
+                                        </div>
+                                        <div>
+                                            <label>
+                                                <input type="checkbox" name=""> 金华</label>
+                                        </div>
+                                        <div>
+                                            <label>
+                                                <input type="checkbox" name=""> 宁波</label>
+                                        </div>
+                                        <div>
+                                            <label>
+                                                <input type="checkbox" name=""> 台州</label>
+                                        </div>
+                                        <div>
+                                            <label>
+                                                <input type="checkbox" name=""> 嘉兴</label>
+                                        </div>
+                                        <div>
+                                            <label>
+                                                <input type="checkbox" name=""> 绍兴</label>
+                                        </div>
+                                        <div>
+                                            <label>
+                                                <input type="checkbox" name=""> 杭州</label>
+                                        </div>
+                                        <div>
+                                            <label>
+                                                <input type="checkbox" name=""> 温州</label>
+                                        </div>
+                                        <div>
+                                            <label>
+                                                <input type="checkbox" name=""> 衢州</label>
+                                        </div>
+                                        <div>
+                                            <label>
+                                                <input type="checkbox" name=""> 舟山</label>
+                                        </div>
+                                        <div>
+                                            <label>
+                                                <input type="checkbox" name=""> 湖州</label>
+                                        </div>
+                                        <div>
+                                            <label>
+                                                <input type="checkbox" name=""> 丽水</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-line">
+                                    <label for="">投放人群：</label>
+                                    <!-- 默认展示投放人群 -->
+                                    <div class="send-person">
+                                        <ul class="form-card-wrap y3-box2 clearfix">
+                                            <li>
+                                                <div class="form-card active">
+                                                    <i class="iconfont icon-radio_true_disable"></i>
+                                                    <p>从人群库中选择</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-card">
+                                                    <i class="iconfont icon-weibiaoti1"></i>
+                                                    <p>新增人群信息</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- 弹框选中之后显示选中人群 -->
+                                    <div class="send-person-then">
+                                        <div class="show-person box clearfix">
+                                            <div>
+                                                <p>定向人群名称：</p>
+                                                <p class="person-name">安溪铁观音受众</p>
+                                            </div>
+                                            <div>
+                                                <p>人群规模：</p>
+                                                <p class="boxp">280000</p>
+                                                <div class="btn-group fr">
+                                                    <button class="btn btn-orange js-delect-per" type="button">删除</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3>投放策略设置</h3>
+                            <div class="y3-tit4">
+                                <div class="form-line">
+                                    <label for="">总预算（元）：</label>
+                                    <input class="form-input" type="text">
+                                </div>
+                                <div class="form-line">
+                                    <label for="">日预算上限（元）：</label>
+                                    <input class="form-input" type="text">
+                                </div>
+                                <div class="form-line">
+                                    <label for="">总曝光上限（千次）：</label>
+                                    <input class="form-input" type="text">
+                                </div>
+                                <div class="form-line">
+                                    <label for="">日曝光上限（千次）：</label>
+                                    <input class="form-input" type="text">
+                                </div>
+                                <div class="form-line">
+                                    <label for="">总点击上限（次）：</label>
+                                    <input class="form-input" type="text">
+                                </div>
+                            </div>
+                        </form>
+                        <div class="btn-group y17-btn">
+                            <button class="btn btn-orange" type="button">提交</button>
+                            <button class="btn btn-orange" type="button">保存</button>
+                        </div>
+                        <!-- 遮罩 -->
+                        <div class="mask"></div>
+                        <!-- 选择商品模态框 -->
+                        <div class="modal-con modal-goods">
+                            <h5 class="modal-title">选择商品 <i class="iconfont icon-iconcha js-close-modal"></i></h5>
+                            <!-- 当内容超出指定高度之后出现滚动条容器 -->
+                            <div class="scroll-con">
+                                <form class="form-group y4-form clearfix">
+                                    <div class="form-line fl y4-form-line1">
+                                        <label for="">关键词：</label>
+                                        <input class="form-input" type="text" placeholder="请输入商品编号或者名称">
+                                    </div>
+                                    <div class="form-line fl y4-form-line2">
+                                        <label for="">类别：</label>
+                                        <div class="modal-select" id="goods-select"></div>
+                                    </div>
+                                    <div class="form-line fl y4-form-line2">
+                                        <button class="btn btn-orange" type="button">查询</button>
+                                    </div>
+                                </form>
+                                <!--表格-->
+                                <div class="table-con y19-table">
+                                    <table id="y19table1" class="datatable table-box"></table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 选择人群模态框 -->
+                        <div class="modal-con modal-person">
+                            <h5 class="modal-title">选择人群 <i class="iconfont icon-iconcha js-close-modal"></i></h5>
+                            <form class="form-group y4-form clearfix">
+                                <div class="form-line fl y4-form-line1">
+                                    <label for="">关键词：</label>
+                                    <input class="form-input" type="text" placeholder="请输入人群编号或者名称">
+                                </div>
+                                <div class="form-line fl y4-form-line2">
+                                    <label for="">状态：</label>
+                                    <div class="modal-select" id="person-select"></div>
+                                </div>
+                                <div class="form-line fl y4-form-line2">
+                                    <button class="btn btn-orange" type="button">查询</button>
+                                </div>
+                            </form>
+                            <!--表格-->
+                            <div class="table-con y18-table">
+                                <table id="y18table1" class="datatable table-box">
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="movable-con">
+                        <form class="form-group y4-form clearfix y9-form">
+                            <div class="form-line fl y4-form-line1">
+                                <label for="">关键词：</label>
+                                <input class="form-input" type="text" placeholder="请输入商品编号或者名称">
+                            </div>
+                            <div class="form-line fl y4-form-line2">
+                                <label for="">媒体：</label>
+                                <div class="medium-select" id="select3"></div>
+                            </div>
+                            <div class="form-line fl y4-form-line2">
+                                <button class="btn btn-orange" type="button">查询</button>
+                            </div>
+                        </form>
+                        <!--表格-->
+                        <div class="table-con">
+                            <table id="y1table1" class="datatable table-box"></table>
+                        </div>
+                    </div>
+                    <div class="movable-con">
+                        <!--表单-->
+                        <form class="form-group y4-form clearfix y9-form">
+                            <div class="form-line fl y4-form-line1">
+                                <label for="">关键词：</label>
+                                <input class="form-input" type="text" placeholder="请输入商品编号或者名称">
+                            </div>
+                            <div class="form-line fl y4-form-line2">
+                                <label for="">媒体：</label>
+                                <div class="medium-select" id="select4"></div>
+                            </div>
+                            <div class="form-line fl y4-form-line2">
+                                <label for="">状态：</label>
+                                <div class="medium-select" id="select2"></div>
+                            </div>
+                            <div class="form-line fl y4-form-line2">
+                                <button class="btn btn-orange" type="button">查询</button>
+                            </div>
+                        </form>
+                        <!--表格-->
+                        <div class="table-con">
+                            <table id="y1table3" class="datatable table-box"></table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--javascript-->
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src=js/jquery.datetimepicker.js></script>
+    <script src="js/common.js"></script>
+    <script src="js/select.js"></script>
+    <script src="js/pages.js"></script>
+    <script src="js/tab.js"></script>
+    <script src="js/activity-manage.js"></script>
+    <!--[if IE 8]>
+        <script src="js/PIE.js"></script>
+        <script src="js/suitableIe.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+    $(function() {
+        var x = DiySelect({
+            selector: $('#select1'),
+            tip: '请选择广告主',
+            series: [{
+                text: '请选择广告主',
+                val: '1',
+            }, {
+                text: '广告主1',
+                val: '2',
+            }, {
+                text: '广告主2',
+                val: '3',
+            }, {
+                text: '广告主3',
+                val: '4',
+            }]
+        });
+        var x1 = DiySelect({
+            selector: $('#select2'),
+            tip: '所有',
+            series: [{
+                text: '所有',
+                val: '1',
+            }, {
+                text: '广告主1',
+                val: '2',
+            }, {
+                text: '广告主2',
+                val: '3',
+            }, {
+                text: '广告主3',
+                val: '4',
+            }]
+        });
+        var x3 = DiySelect({
+            selector: $('#select3'),
+            series: [{
+                text: '请选择广告主',
+                val: '1',
+            }, {
+                text: '广告主1',
+                val: '2',
+            }, {
+                text: '广告主2',
+                val: '3',
+            }, {
+                text: '广告主3',
+                val: '4',
+            }]
+        });
+        var x4 = DiySelect({
+            selector: $('#select4'),
+            tip: '所有',
+            series: [{
+                text: '所有',
+                val: '1',
+            }, {
+                text: '广告主1',
+                val: '2',
+            }, {
+                text: '广告主2',
+                val: '3',
+            }, {
+                text: '广告主3',
+                val: '4',
+            }]
+        });
+        $(".y3-startTime").datetimepicker({
+            lang: 'ch',
+            timepicker: false,
+            format: 'Y/m/d',
+            onShow: function(ct) {
+                this.setOptions({
+                    maxDate: $(".y3-endTime").val() ? $(".y3-endTime").val() : false
+                })
+            }
+        })
+        $(".y3-endTime").datetimepicker({
+            lang: 'ch',
+            timepicker: false,
+            format: 'Y/m/d',
+            onShow: function(ct) {
+                this.setOptions({
+                    minDate: $(".y3-startTime").val() ? $(".y3-startTime").val() : false,
+                })
+            }
+        })
+        $(".y3-startTime").val(formatDate(new Date(), 'yyyy/MM/dd'));
+        $(".y3-endTime").val(formatDate(new Date(+new Date()+30*24*60*60*1000),'yyyy/MM/dd'))
+
+
+
+        $(".y3-startTime2").datetimepicker({
+            lang: 'ch',
+            datepicker: false,
+            format: 'H:i',
+            step: 5
+        })
+        $(".y3-endTime2").datetimepicker({
+            lang: 'ch',
+            datepicker: false,
+            format: 'H:i',
+            step: 5
+        })
+
+
+        //选择人群模态框中的下拉框
+        var x = DiySelect({
+            selector: $('#person-select'),
+            tip: '所有',
+            series: [{
+                text: '孙',
+                val: '1',
+            }, {
+                text: '王',
+                val: '2',
+            }, {
+                text: '兆',
+                val: '3',
+            }, {
+                text: '李',
+                val: '4',
+            }]
+        });
+
+        //选择商品下拉框
+        var x = DiySelect({
+            selector: $('#goods-select'),
+            tip: '所有',
+            series: [{
+                text: '孙',
+                val: '1',
+            }, {
+                text: '王',
+                val: '2',
+            }, {
+                text: '兆',
+                val: '3',
+            }, {
+                text: '李',
+                val: '4',
+            }]
+        });
+
+        // 表格数据
+        var y1data = [];
+        for (var i = 0; i < 50; i++) {
+            y1data[i] = {
+                id: i + 1,
+                name1: "口袋小鸟",
+                name2: "安溪铁观音",
+                name3: "100000",
+                name4: "56.3%",
+            };
+        }
+        var cs = new table({
+            "tableId": "y1table1", //必须
+            "headers": ["序号", "广告主", "活动名称", "领奖数(点击)", "点击率"], //必须
+            "data": y1data, //必须
+            "displayNum": 8, //必须  默认 10，每页多少数
+            "groupDataNum": 10 //可选  默认 10,最大页数
+        });
+        // 表格数据
+        var y1data = [];
+        for (var i = 0; i < 50; i++) {
+            y1data[i] = {
+                id: i + 1,
+                name1: "1547c21",
+                name2: "坚果五元代金卷",
+                name3: "代金卷",
+                name4: "百草味旗舰店",
+                name5: "已上架",
+                name6: "2017/3/29",
+                opt: '<div class="dropdwon dropdwon-table"><div class="dropdwon-header"><p class="dropdwon-text">详情</p><i class="iconfont icon-sanjiao"></i></div><div class="dorpdwon-con"><ul class="dropdwon-select"><li class="table-remove">删除</li></ul></div></div>'
+            };
+        }
+        var cs = new table({
+            "tableId": "y1table3", //必须
+            "headers": ["序号", "商品编号", "商品名称", "商品类型", "归属广告主", "商品状态", "失效时间", "操作"], //必须
+            "data": y1data, //必须
+            "displayNum": 8, //必须  默认 10，每页多少数
+            "groupDataNum": 10 //可选  默认 10,最大页数
+        });
+        // 表格按钮点击事件
+        $('.dropdwon-table .dropdwon-header').on('click', function(e) {
+            e.stopPropagation();
+            $('.dorpdwon-con').hide();
+            $(this).siblings('.dorpdwon-con').show();
+        });
+        $('.table-remove').click(function(e) {
+            e.stopPropagation();
+            $(this).parents('.dorpdwon-con').hide();
+        });
+        $(document).click(function() {
+            $('.dropdwon-table .dorpdwon-con').hide();
+        });
+    });
+    </script>
+</body>
+
+</html>

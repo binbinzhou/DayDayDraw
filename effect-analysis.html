@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>投放效果分析</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <link rel="stylesheet" href="css/jquery.datetimepicker.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-img"><img src="img/logo.png" alt=""></div>
+            </div>
+            <div class="header-in">
+                <p class="user">口袋小鸟</p>
+                <p class="exit"><i class="iconfont icon-xiaoxi"></i>消息</p>
+                <p class="exit"><i class="iconfont icon-tuichu"></i>退出</p>
+            </div>
+        </div>
+        <div class="movable">
+             <p class="effect-analysis-message-detail">口袋小鸟 | 蓝色之恋口红20元蓝色代金劵投放活动</p>
+            <div class="fixed-nav">
+                <div class="nav">
+                    <div>
+                        <a href="index.html"><i class="iconfont icon-shouye01"></i><p>首页</p></a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <i class="iconfont icon-jingzhuntoufang"></i>
+                            <p>惊喜投放</p>
+                        </a>
+                        <ul class="second-nav">
+                            <li><a href="activity-manage.html">活动管理</a></li>
+                            <li><a href="mer-control.html">商品管理</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <i class="iconfont icon-tongji"></i>
+                            <p>统计报表</p>
+                        </a>
+                        <ul class="second-nav">
+                            <li><a class="active" href="effect-analysis.html">投放效果分析</a></li>
+                            <li><a href="rank-analysis.html">投放排行分析</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <i class="iconfont icon-renqun"></i>
+                            <p>人群管理</p>
+                        </a>
+                        <ul class="second-nav">
+                            <li><a href="people-orientation.html">人群定向</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <i class="iconfont icon-guanli"></i>
+                            <p>管理</p>
+                        </a>
+                        <ul class="second-nav">
+                            <li><a href="adver-manage.html">广告主管理</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab tab-slide">               
+                <ul class="tab-header">
+                    <li>效果详情</li>
+                    <li class="tab-click">人群分析</li>
+                </ul>
+                <div class="tab-con">
+                    <!-- 效果详情 -->
+                    <div class="movable-con">
+                        <!--表单-->
+                        <form class="form-group y13-form clearfix">
+                            <div class="form-line">
+                                <label for="">时间：</label>
+                                <div>
+                                    <div class="calendar-wrap">
+                                        <input class="form-input form-calendar y1-time startTime-effect" type="text" name="" placeholder="起始时间">
+                                    </div>
+                                    <p class="">到</p>
+                                    <div class="calendar-wrap">
+                                        <input class="form-input form-calendar y1-time endTime-effect" type="text" name="" placeholder="结束时间">
+                                    </div>
+                                    <ul class="y1-time-tab">
+                                        <li class="y1-active">昨日</li>
+                                        <li>近7日</li>
+                                        <li>近30日</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="form-line fl y13-form-line2">
+                                <label for="">广告主：</label>
+                                <div id="select1"></div>
+                            </div>
+                            <div class="form-line fl y13-form-line2">
+                                <label class="y13-label2" for="">惊喜活动：</label>
+                                <div id="select2"></div>
+                            </div>
+                        </form>
+                        <!--表格-->
+                        <div class="table-con">
+                            <table id="y1table2" class="datatable table-box"></table>
+                        </div>
+                    </div>
+                    <!-- 人群分析 -->
+                    <div class="movable-con display-block">
+                        <!--表单-->
+                        <form class="form-group y4-form clearfix">
+                            <div class="form-line">
+                                <p for="">分析维度：</p>
+                                <div class="radio-wrap">
+                                    <div>
+                                        <input type="checkbox" name="" checked>
+                                        <label>年龄</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="">
+                                        <label>性别</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="">
+                                        <label>身份</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="">
+                                        <label>爱好</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <!--表格-->
+                        <div class="echarts-container">
+                            <h2 class="bar-title">年龄分析</h2>
+                            <div class="bar-echarts fl" id="bar-echarts1">
+                            </div>
+                            <div class="fr">
+                                <table class="y5-table">
+                                    <thead>
+                                        <tr class="table-tit">
+                                            <th class="table-tit1">年龄分档</th>
+                                            <th>占比1</th>
+                                            <th>占比2</th>
+                                            <th class="table-tit4">提升度</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="y5-tbody" id="y5Tbody1">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="echarts-container">
+                            <h2 class="bar-title">年龄分析</h2>
+                            <div class="bar-echarts fl" id="bar-echarts2">
+                            </div>
+                            <div class="fr">
+                                <table class="y5-table">
+                                    <thead>
+                                        <tr class="table-tit">
+                                            <th class="table-tit1">年龄分档</th>
+                                            <th>占比1</th>
+                                            <th>占比2</th>
+                                            <th class="table-tit4">提升度</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="y5-tbody" id="y5Tbody2">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--javascript-->
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery.datetimepicker.js"></script>
+    <script src=" js/common.js"></script>
+    <script src="js/select.js"></script>
+    <script src="js/pages.js"></script>
+    <script src="js/tab.js"></script>
+    <script src="js/echarts.js"></script>
+    <script src="js/echartsConfig.js"></script>
+    <!--[if IE 8]>
+        <script src="js/PIE.js"></script>
+        <script src="js/suitableIe.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+    $(function() {
+        var x = DiySelect({
+            selector: $('#select1'),
+            tip:'所有广告主',
+            series: [{
+                text: '孙',
+                val: '1',
+            }, {
+                text: '王',
+                val: '2',
+            }, {
+                text: '兆',
+                val: '3',
+            }, {
+                text: '李',
+                val: '4',
+            }]
+        })
+        var y = DiySelect({
+            selector: $('#select2'),
+            tip:'所有广告主',
+            series: [{
+                text: '孙',
+                val: '1',
+            }, {
+                text: '王',
+                val: '2',
+            }, {
+                text: '兆',
+                val: '3',
+            }, {
+                text: '李',
+                val: '4',
+            }]
+        })
+
+        $(".startTime-effect").datetimepicker({
+            lang: 'ch',
+            timepicker:false,
+            format: 'Y/m/d',
+            onShow: function(ct) {
+                this.setOptions({
+                    maxDate: $(".endTime-effect").val() ? $(".endTime-effect").val():false
+                })
+            }
+        })
+        $(".endTime-effect").datetimepicker({
+            lang: 'ch',
+            timepicker:false,
+            format: 'Y/m/d',
+            onShow: function(ct) {
+                this.setOptions({
+                    minDate: $(".startTime-effect").val() ? $(".startTime-effect").val() : false,
+                })
+            }
+        })
+        $(".startTime-effect").val(formatDate(new Date(),'yyyy/MM/dd'));
+        $(".endTime-effect").val(formatDate(new Date(),'yyyy/MM/dd'));
+
+
+        function toChangeDate(text) {
+            var str = text.replace(/年|月|日/gi, '/');
+            return str.substr(0, str.length - 1);
+        }
+
+        data1 = [
+            ['20岁以下', '15%', '25%', '100%'],
+            ['20岁以下', '15%', '25%', '100%'],
+            ['20岁以下', '15%', '25%', '100%'],
+            ['20岁以下', '15%', '25%', '100%'],
+            ['20岁以下', '15%', '25%', '100%']
+        ];
+        data2 = [
+            ['20岁以下', '15%', '25%', '100%'],
+            ['20岁以下', '15%', '25%', '100%'],
+            ['20岁以下', '15%', '25%', '100%'],
+            ['20岁以下', '15%', '25%', '100%'],
+            ['20岁以下', '15%', '25%', '100%']
+        ];
+
+        var tbodyStr1 = "";
+        for (var i = 0; i < data1.length; i++) {
+            tbodyStr1 +=
+                '<tr>' +
+                '<td class="y5-tbody1">' + data1[i][0] + '</td>' +
+                '<td>' + data1[i][1] + '</td>' +
+                '<td>' + data1[i][2] + '</td>' +
+                '<td class="y5-tbody4">' + data1[i][3] + '</td>' +
+                '</tr>'
+        }
+        $('#y5Tbody1').html(tbodyStr1);
+
+        var tbodyStr2 = "";
+        for (var i = 0; i < data2.length; i++) {
+            tbodyStr2 +=
+                '<tr>' +
+                '<td class="y5-tbody1">' + data2[i][0] + '</td>' +
+                '<td>' + data2[i][1] + '</td>' +
+                '<td>' + data2[i][2] + '</td>' +
+                '<td class="y5-tbody4">' + data2[i][3] + '</td>' +
+                '</tr>'
+        }
+        $('#y5Tbody2').html(tbodyStr2);
+        //表格
+        var y1data = [];
+        for (var i = 0; i < 50; i++) {
+            y1data[i] = {
+                id: i + 1,
+                name1: "口袋小鸟",
+                name2: "2888",
+                name3: "1475",
+                name4: "56.3%",
+                name5: "100000",
+                name6:'0',
+                opt: '<div class="dropdwon dropdwon-table"><div class="dropdwon-header"><p class="dropdwon-text">详情</p><i class="iconfont icon-sanjiao"></i></div>'
+            };
+        }
+        var cs = new table({
+            "tableId": "y1table2", //必须
+            "headers": ["序号", "广告主/活动名称", "中奖数", "领奖数", "点击率（%）","曝光费用","点击费用","操作"], //必须
+            "data": y1data, //必须
+            "displayNum": 8, //必须  默认 10，每页多少数
+            "groupDataNum": 10 //可选  默认 10,最大页数
+        });
+    })
+    </script>
+</body>
+
+</html>

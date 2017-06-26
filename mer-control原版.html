@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="zh-CH">
+
+<head>
+    <meta charset="UTF-8">
+    <title>商品管理</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/jquery.datetimepicker.css">
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <style>
+    /*        写在页面里提醒人以后命名时千万不要忘记改
+*/
+    
+    #select1 .dropdwon,
+    #select2 .dropdwon {
+        width: 100px;
+    }
+    
+    #select3 .dropdwon {
+        width: 120px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-img"><img src="img/logo.png" alt=""></div>
+            </div>
+            <div class="header-in">
+                <p class="user">口袋小鸟</p>
+                <p class="exit"><i class="iconfont icon-xiaoxi"></i>消息</p>
+                <p class="exit"><i class="iconfont icon-tuichu"></i>退出</p>
+            </div>
+        </div>
+        <div class="movable">
+            <div class="fixed-nav">
+                <div class="nav">
+                    <div>
+                        <a href="index.html"><i class="iconfont icon-shouye01"></i><p>首页</p></a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <i class="iconfont icon-jingzhuntoufang"></i>
+                            <p>惊喜投放</p>
+                        </a>
+                        <ul class="second-nav">
+                            <li><a href="activity-manage.html">活动管理</a></li>
+                            <li><a class="active" href="mer-control.html">商品管理</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <i class="iconfont icon-tongji"></i>
+                            <p>统计报表</p>
+                        </a>
+                        <ul class="second-nav">
+                            <li><a href="effect-analysis.html">投放效果分析</a></li>
+                            <li><a href="rank-analysis.html">投放排行分析</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <i class="iconfont icon-renqun"></i>
+                            <p>人群管理</p>
+                        </a>
+                        <ul class="second-nav">
+                            <li><a href="people-orientation.html">人群定向</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <i class="iconfont icon-guanli"></i>
+                            <p>管理</p>
+                        </a>
+                        <ul class="second-nav">
+                            <li><a href="adver-manage.html">广告主管理</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab tab-slide">
+                <ul class="tab-header">
+                    <li class="tab-click">新增商品</li>
+                    <li>已上架商品</li>
+                    <li>所有商品</li>
+                </ul>
+                <div class="tab-con">
+                    <!-- 新增商品 -->
+                    <div class="movable-con display-block">
+                        <form class="form-group form-style1">
+                            <div class="form-line">
+                                <label for="">商品名称：</label>
+                                <input class="form-input" type="text">
+                            </div>
+                            <div class="form-line">
+                                <label for="">商品描述：</label>
+                                <textarea class="form-textarea" name=""></textarea>
+                            </div>
+                            <div class="form-line">
+                                <p for="">商品类别：</p>
+                                <div class="radio-wrap">
+                                    <div>
+                                        <input type="checkbox" name="">
+                                        <label>美食</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="">
+                                        <label>休闲娱乐</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="">
+                                        <label>食品</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="">
+                                        <label>手机</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="">
+                                        <label>数码</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="">
+                                        <label>珠宝</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-line">
+                                <label for="">归属广告主：</label>
+                                <div id="select"></div>
+                            </div>
+                            <div class="form-line">
+                                <label for="">有效时间：</label>
+                                <div>
+                                    <div class="calendar-wrap">
+                                        <input class="form-input form-calendar y3-time y3-startTime" type="text" name="" placeholder="起始时间">
+                                    </div>
+                                    <p class="">到</p>
+                                    <div class="calendar-wrap">
+                                        <input class="form-input form-calendar y3-time y3-endTime" type="text" name="" placeholder="结束时间">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-line">
+                                <label for="">广告素材：</label>
+                                <div>
+                                    <ul class="form-card-wrap js-zy-form-card">
+                                        <li>
+                                            <div class="form-card">
+                                                <i class="iconfont icon-weibiaoti1"></i> 添加移动端素材
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-card">
+                                                <i class="iconfont icon-weibiaoti1"></i> 添加PC端素材
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="form-pop js-zy-form-pop">
+                            <div class="submit-card">
+                                <h4 class="header-right h-header h4-header h4-gray js-zy-pop-header">
+                                    <p>移动端素材</p>
+                                <div>
+                                    <button class="btn btn-orange js-z-tab-del" type="button">删除</button>
+                                    <!-- <i class="iconfont icon-iconcha js-z-from-close"></i> -->
+                                </div>
+                                </h4>
+                                <div class="card-line">
+                                    <p>LOGO图片：</p>
+                                    <div>
+                                        <input class="hid" type='file' name='mologo' id="mologo">
+                                        <img class="hid" src="" id="img0">
+                                        <button class="btn btn-green" type="button" id="mologoBtn"><i class="iconfont icon-shangchuan"></i>本地上传</button>
+                                    </div>
+                                    <div class="img-display img-display-logo">
+                                        <div>
+                                            <img src="" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-line">
+                                    <p>中奖页面图片</p>
+                                    <div>
+                                        <input class="hid" type='file' name='mowin' id="mowin">
+                                        <img class="hid" src="" id="img1">
+                                        <button class="btn btn-green" type="button" id="mowinBtn"><i class="iconfont icon-shangchuan"></i>本地上传</button>
+                                    </div>
+                                    <div class="img-display img-display-win">
+                                        <div>
+                                            <img src="" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-line">
+                                    <p>跳转链接：</p>
+                                    <div>
+                                        <input class="form-input" type="text" name="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-pop js-zy-form-pop">
+                            <div class="submit-card">
+                                <h4 class="header-right h-header h4-header h4-gray js-zy-pop-header">
+                                    <p>移动端素材</p>
+                                <div>
+                                    <button class="btn btn-orange js-z-tab-del" type="button">删除</button>
+                                    <!-- <i class="iconfont icon-iconcha js-z-from-close"></i> -->
+                                </div>
+                                </h4>
+                                <div class="card-line">
+                                    <p>LOGO图片：</p>
+                                    <div>
+                                        <input class="hid" type='file' name='mologo' id="mologo">
+                                        <img class="hid" src="" id="img0">
+                                        <button class="btn btn-green" type="button" id="mologoBtn"><i class="iconfont icon-shangchuan"></i>本地上传</button>
+                                    </div>
+                                    <div class="img-display img-display-logo">
+                                        <div>
+                                            <img src="" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-line">
+                                    <p>中奖页面图片</p>
+                                    <div>
+                                        <input class="hid" type='file' name='mowin' id="mowin">
+                                        <img class="hid" src="" id="img1">
+                                        <button class="btn btn-green" type="button" id="mowinBtn"><i class="iconfont icon-shangchuan"></i>本地上传</button>
+                                    </div>
+                                    <div class="img-display img-display-win">
+                                        <div>
+                                            <img src="" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-line">
+                                    <p>跳转链接：</p>
+                                    <div>
+                                        <input class="form-input" type="text" name="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group y16-btn">
+                            <button class="btn btn-orange js-z-tab-sub" type="button">提交</button>
+                            <button class="btn btn-orange" type="button">保存</button>
+                        </div>
+                    </div>
+                    <!-- 已上架商品 -->
+                    <div class="movable-con">
+                        <form class="form-group y4-form clearfix y9-form">
+                            <div class="form-line fl y4-form-line1">
+                                <label for="">关键词：</label>
+                                <input class="form-input" type="text" placeholder="请输入商品编号或者名称">
+                            </div>
+                            <div class="form-line fl y4-form-line2">
+                                <label for="">类别：</label>
+                                <div class="smalle-select" id="select3"></div>
+                            </div>
+                            <div class="form-line fl y4-form-line2">
+                                <button class="btn btn-orange" type="button">查询</button>
+                            </div>
+                        </form>
+                        <!--表格-->
+                        <div class="table-con">
+                            <table id="y1table1" class="datatable table-box"></table>
+                        </div>
+                    </div>
+                    <!-- 所有商品 -->
+                    <div class="movable-con">
+                        <form class="form-group y4-form clearfix y9-form">
+                            <div class="form-line fl y4-form-line1">
+                                <label for="">关键词：</label>
+                                <input class="form-input" type="text" placeholder="请输入商品编号或者名称">
+                            </div>
+                            <div class="form-line fl y4-form-line2">
+                                <label for="">类别：</label>
+                                <div class="smalle-select" id="select1"></div>
+                            </div>
+                            <div class="form-line fl y4-form-line2">
+                                <label for="">状态：</label>
+                                <div class="smalle-select" id="select2"></div>
+                            </div>
+                            <div class="form-line fl y4-form-line2">
+                                <button class="btn btn-orange" type="button">查询</button>
+                            </div>
+                        </form>
+                        <!--表格-->
+                        <div class="table-con">
+                            <table id="y1table22" class="datatable table-box"></table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 弹窗 -->
+    <div class="mask"></div>
+    <div class="pop pop-info">
+        <div class="pop-header">
+            <h4 class="h4-pop-header">商品信息<i class="iconfont icon-iconcha js-z-pop-close"></i></h4>
+        </div>
+        <div class="pop-con">
+            <div class="pop-wrap">
+                <h4 class="h4-header">商品基础信息</h4>
+                <div class="pop-container">
+                    <table class="y7-table">
+                        <tbody>
+                            <tr>
+                                <td>商品编号</td>
+                                <td class="y7-con">111111111</td>
+                                <td>商品名称</td>
+                                <td class="y7-con"></td>
+                            </tr>
+                            <tr>
+                                <td>商品描述</td>
+                                <td class="y7-con"></td>
+                                <td>商品状态</td>
+                                <td class="y7-con"></td>
+                            </tr>
+                            <tr>
+                                <td>归属广告主</td>
+                                <td class="y7-con"></td>
+                                <td>商品类别</td>
+                                <td class="y7-con"></td>
+                            </tr>
+                            <tr>
+                                <td>生效时间</td>
+                                <td class="y7-con"></td>
+                                <td>失效时间</td>
+                                <td class="y7-con"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="pop-wrap">
+                <h4 class="h4-header">移动端素材</h4>
+                <div class="pop-container">
+                    <div class="material-show">
+                        <div>
+                            <p class="img-p1">logo位素材（195*195）</p>
+                            <div class="img-wrap">
+                                <img src="img/material-logo.png" alt="">
+                            </div>
+                        </div>
+                        <div>
+                            <p class="img-p2">中奖位素材（220*150）</p>
+                            <div class="img-wrap img-wrap1">
+                                <img src="img/material-win.png" alt="">
+                            </div>
+                        </div>
+                        <form class="form-group material-form">
+                            <div class="form-line">
+                                <label>跳转链接：</label>
+                                <input class="form-input" type="text" name="">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 顶级审批弹窗 -->
+    <div class="pop pop-approval">
+        <div class="pop-header">
+            <h4 class="h4-pop-header">商品信息<i class="iconfont icon-iconcha js-z-pop-close"></i></h4>
+        </div>
+        <div class="pop-con">
+            <div class="pop-wrap">
+                <h4 class="h4-header">商品基础信息</h4>
+                <div class="pop-container">
+                    <table class="y7-table">
+                        <tbody>
+                            <tr>
+                                <td>商品编号</td>
+                                <td class="y7-con">111111111</td>
+                                <td>商品名称</td>
+                                <td class="y7-con"></td>
+                            </tr>
+                            <tr>
+                                <td>商品描述</td>
+                                <td class="y7-con"></td>
+                                <td>商品状态</td>
+                                <td class="y7-con"></td>
+                            </tr>
+                            <tr>
+                                <td>归属广告主</td>
+                                <td class="y7-con"></td>
+                                <td>商品类别</td>
+                                <td class="y7-con"></td>
+                            </tr>
+                            <tr>
+                                <td>生效时间</td>
+                                <td class="y7-con"></td>
+                                <td>失效时间</td>
+                                <td class="y7-con"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="pop-wrap">
+                <h4 class="h4-header">移动端素材</h4>
+                <div class="pop-container">
+                    <div class="material-show">
+                        <div>
+                            <p class="img-p1">logo位素材（195*195）</p>
+                            <div class="img-wrap">
+                                <img src="img/material-logo.png" alt="">
+                            </div>
+                        </div>
+                        <div>
+                            <p class="img-p2">中奖位素材（220*150）</p>
+                            <div class="img-wrap img-wrap1">
+                                <img src="img/material-win.png" alt="">
+                            </div>
+                        </div>
+                        <form class="form-group material-form">
+                            <div class="form-line">
+                                <label>跳转链接：</label>
+                                <input class="form-input" type="text" name="">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="pop-wrap">
+                <h4 class="h4-header">审批信息</h4>
+                <div class="pop-container">
+                    <div class="form-group y20">
+                        <div class="form-line">
+                            <label>审批结果：</label>
+                            <div class="radio-wrap">
+                                <div>
+                                    <label>
+                                        <input type="radio" name="pass"> 审批通过
+                                    </label>
+                                </div>
+                                <div>
+                                    <label>
+                                        <input type="radio" name="notpass"> 审批不通过
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-line">
+                            <label for="">审批意见：</label>
+                            <textarea class="form-textarea" name=""></textarea>
+                        </div>
+                        <div class="form-line">
+                            <button class="btn btn-orange fr" type="button">同意</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--javascript-->
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src=" js/common.js"></script>
+    <script src="js/pages.js"></script>
+    <script src="js/sideBar.js"></script>
+    <script src="js/select.js"></script>
+    <script src="js/tab.js"></script>
+    <script src="js/jquery.datetimepicker.js"></script>
+    <!--[if IE 8]>
+        <script src="js/PIE.js"></script>
+        <script src="js/suitableIe.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+    $("#mologoBtn").click(function() {
+        $(this).parent().siblings().show();
+        $("#mologo").click();
+    })
+    $("#mowinBtn").click(function() {
+        $(this).parent().siblings().show();
+        $("#mowin").click();
+    })
+    $(function() {
+        var x = DiySelect({
+            selector: $('#select'),
+            tip: '请选择广告主',
+            series: [{
+                text: '请选择广告主',
+                val: '1',
+            }, {
+                text: '广告主1',
+                val: '2',
+            }, {
+                text: '广告主2',
+                val: '3',
+            }, {
+                text: '广告主3',
+                val: '4',
+            }]
+        })
+        var x = DiySelect({
+            selector: $('#select1'),
+            tip: '所有',
+            series: [{
+                text: '所有',
+                val: '1',
+            }, {
+                text: '所有',
+                val: '2',
+            }]
+        })
+        var y = DiySelect({
+            selector: $('#select2'),
+            tip: '所有',
+            series: [{
+                text: '所有',
+                val: '1',
+            }, {
+                text: '所有',
+                val: '2',
+            }]
+        });
+        var select3 = DiySelect({
+            selector: $('#select3'),
+            tip: '所有',
+            series: [{
+                text: '代金卷',
+                val: '1',
+            }, {
+                text: '折扣卷',
+                val: '2',
+            }, {
+                text: '话费卷',
+                val: '3',
+            }, {
+                text: '流量卷',
+                val: '4',
+            }]
+        });
+        // 时间插件
+
+        $(".y3-startTime").datetimepicker({
+            lang: 'ch',
+            timepicker: false,
+            format: 'Y/m/d',
+            onShow: function(ct) {
+                this.setOptions({
+                    maxDate: $(".y3-endTime").val() ? $(".y3-endTime").val() : false
+                })
+            }
+        })
+        $(".y3-endTime").datetimepicker({
+            lang: 'ch',
+            timepicker: false,
+            format: 'Y/m/d',
+            onShow: function(ct) {
+                this.setOptions({
+                    minDate: $(".y3-startTime").val() ? $(".y3-startTime").val() : false,
+                })
+            }
+        })
+        $(".y3-startTime").val(formatDate(new Date(), 'yyyy/MM/dd'))
+        $(".y3-endTime").val(formatDate(new Date(+new Date() + 30 * 24 * 60 * 60 * 1000), 'yyyy/MM/dd'))
+
+        $(".y1-time-tab li").click(function() {
+            $(this).addClass("y1-active").siblings().removeClass("y1-active");
+        })
+
+        // 广告素材
+
+        $('.js-zy-form-card > li').click(function() {
+            var index = $(this).index();
+
+
+            if ($(this).children('.form-card').hasClass('active')) {
+                $(this).children('.form-card').removeClass('active');
+                $('.js-zy-form-pop').eq(index).hide();
+            } else {
+                $(this).children('.form-card').addClass('active');
+                $('.js-zy-form-pop').eq(index).show();
+            }
+
+            // $(this).siblings().children('.form-card').removeClass('active');
+            if (index == 0) {
+                $('.js-zy-pop-header p').eq(0).text('移动端素材')
+            } else {
+                $('.js-zy-pop-header p').eq(1).text('PC端素材')
+            }
+        });
+
+        $('.js-z-tab-del').on('click', function() {
+            var index = $(this).closest('.js-zy-form-pop').index('.js-zy-form-pop');
+            $('.js-zy-form-pop').eq(index).hide();
+            $('.js-zy-form-card > li .form-card').eq(index).removeClass('active')
+        });
+
+
+        // 点击提交
+        $('.js-z-tab-sub').click(function() {
+            $('.tab-header > li').removeClass('tab-click');
+            $('.tab-header > li').eq(2).addClass('tab-click');
+            $('.tab-con > div').hide();
+            $('.tab-con > div').eq(2).show();
+        });
+        // 已上架商品表格
+        var y1data = [],
+            y2data = [];
+        for (var i = 0; i < 22; i++) {
+            y2data[i] = {
+                id: i + 1,
+                name1: '2121212121',
+                name2: "坚果5元代金卷",
+                name3: "代金卷",
+                name4: "百草味旗舰店",
+                name5: "已上架",
+                name6: "2017/2/17",
+                opt: ''
+            };
+        }
+        var cs = new table({
+            "tableId": "y1table1", //必须
+            "headers": ["序号", "商品编码", "商品名称", "商品类型", "归属广告主", "商品状态", "失效时间", "操作"], //必须
+            "data": y2data, //必须
+            "displayNum": 8, //必须  默认 10，每页多少数
+            "groupDataNum": 10, //可选  默认 10,最大页数
+            trunPageCallBack: function() {
+                //初始化表格中的下拉框
+                DiySelect({
+                    suitTable: true,
+                    tip: '详情',
+                    selector: $('#y1table1 .ykytd-opt'),
+                    series: [{
+                        text: '详情'
+                    }],
+                    createLi: function(liitem) {
+                        //liitem  对应series数组的单独项
+                        var li = '<li><a class="item" href="#" ' +
+                            (liitem.hiddenId ? ('hiddenId="' + liitem.hiddenId + '" ') : '') +
+                            (liitem.dateTime ? ('dateTime="' + liitem.dateTime + '" ') : '') +
+                            '>' + liitem.text + '</a></li>';
+                        return li;
+                    },
+                    callback: function(item) {
+                        if ($(item).html() == '详情') {
+                            $('.pop-info').show();
+                            $('.mask').show();
+                        }
+                    }
+                })
+            }
+        });
+
+        // 所有商品表格
+        for (var i = 0; i < 22; i++) {
+            y2data[i] = {
+                id: i + 1,
+                name1: '21547C222' + i,
+                name2: "坚果5元代金卷",
+                name3: "代金卷",
+                name4: "百草味旗舰店",
+                name5: "已上架",
+                name6: "2017/3/29",
+                opt: ''
+            };
+        }
+        newtable();
+
+        function newtable() {
+
+            var cs = new table({
+                "tableId": "y1table22", //必须
+                "headers": ["序号", "商品编码", "商品名称", "商品类型", "归属广告主", "商品状态", "失效时间", "操作"], //必须
+                "data": y2data, //必须
+                "displayNum": 8, //必须  默认 10，每页多少数
+                "groupDataNum": 10, //可选  默认 10,最大页数
+                trunPageCallBack: function(PageNum) {
+                    //初始化表格中的下拉框
+                    DiySelect({
+                        suitTable: true,
+                        tip: '详情',
+                        selector: $('#y1table22 .ykytd-opt'),
+                        series: [{
+                            text: '详情'
+                        }, {
+                            text: '删除'
+                        }, {
+                            text: '审批'
+                        }],
+                        callback: function(item) {
+                            if ($(item).html() == '弹框') {
+                                $('.pop-info').show();
+                                $('.mask').show();
+                            } else if ($(item).html() == "删除") {
+                                var start = $(item).parents("tr").css("display", "none").children(".ykytd-id").html();
+                                y2data.splice(start - 1, 1);
+                                newtable();
+                                $(".y-option" + PageNum).trigger("click");
+                            } else if ($(item).html() == "审批") {
+                                $('.pop-approval').show();
+                                $('.mask').show();
+                            }
+                        }
+                    })
+                }
+            });
+        }
+
+        $('.js-z-pop-close').click(function() {
+            $(this).parents('.pop').hide();
+            $('.mask').hide();
+        });
+        //禁用表单提交代码
+        $('.form-input').keypress(function(e) {
+            if (e.keyCode == 13) {
+                e.preventDefault();
+            }
+        })
+
+    })
+    </script>
+</body>
+
+</html>

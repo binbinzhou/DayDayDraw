@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>广告主管理</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-img"><img src="img/logo.png" alt=""></div>
+            </div>
+            <div class="header-in">
+                <p class="user">口袋小鸟</p>
+                <p class="exit"><i class="iconfont icon-xiaoxi"></i>消息</p>
+                <p class="exit"><i class="iconfont icon-tuichu"></i>退出</p>
+            </div>
+        </div>
+        <div class="movable">
+            <div class="fixed-nav">
+                <div class="nav">
+                    <div>
+                        <a href="index.html"><i class="iconfont icon-shouye01"></i><p>首页</p></a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <i class="iconfont icon-jingzhuntoufang"></i>
+                            <p>惊喜投放</p>
+                        </a>
+                        <ul class="second-nav">
+                            <li><a href="activity-manage.html">活动管理</a></li>
+                            <li><a href="mer-control.html">商品管理</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <i class="iconfont icon-tongji"></i>
+                            <p>统计报表</p>
+                        </a>
+                        <ul class="second-nav">
+                            <li><a href="effect-analysis.html">投放效果分析</a></li>
+                            <li><a href="rank-analysis.html">投放排行分析</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <i class="iconfont icon-renqun"></i>
+                            <p>人群管理</p>
+                        </a>
+                        <ul class="second-nav">
+                            <li><a href="people-orientation.html">人群定向</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <i class="iconfont icon-guanli"></i>
+                            <p>管理</p>
+                        </a>
+                        <ul class="second-nav">
+                            <li><a class="active" href="adver-manage.html">广告主管理</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab tab-slide">
+                <ul class="tab-header">
+                    <li class="tab-click">新建广告主</li>
+                    <li>所有广告主</li>
+                </ul>
+                <div class="tab-con">
+                    <!-- 广告主管理 -->
+                    <div class="movable-con display-block">
+                        <div class="y2-form">
+                            <form class="form-group form-style1">
+                                <div class="form-line">
+                                    <label for="">广告主名称：</label>
+                                    <input class="form-input" type="text">
+                                </div>
+                                <div class="form-line">
+                                    <label for="">资质名称：</label>
+                                    <input class="form-input" type="text">
+                                </div>
+                                <div class="form-line">
+                                    <label for="">联系人：</label>
+                                    <input class="form-input" type="text">
+                                </div>
+                                <div class="form-line">
+                                    <label for="">联系电话：</label>
+                                    <input class="form-input" type="text">
+                                </div>
+                            </form>
+                            <div class="y2-foot">
+                                <button class="y2-btn" type="button">提交</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 所有广告主 -->
+                    <div class="movable-con">
+                        <!--表单-->
+                        <form class="form-group y4-form clearfix y9-form">
+                            <div class="form-line fl y4-form-line1">
+                                <label for="">关键词：</label>
+                                <input class="form-input " type="text" placeholder="请输入商品编号或者名称">
+                            </div>
+                            <div class="form-line fl y4-form-line2">
+                                <label for="">类别：</label>
+                                <div class="small-select" id="select1"></div>
+                            </div>
+                            <div class="form-line fl y4-form-line2">
+                                <label for="">状态：</label>
+                                <div class="small-select" id="select2"></div>
+                            </div>
+                            <div class="form-line fl y4-form-line2">
+                                <button class="btn btn-orange" type="button">查询</button>
+                            </div>
+                        </form>
+                        <!--表格-->
+                        <div class="table-con">
+                            <table id="y1tablenn" class="datatable table-box"></table>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 弹窗 -->
+    <div class="mask"></div>
+    <div class="pop pop-info">
+        <div class="pop-header">
+            <h4 class="h4-pop-header">商品信息<i class="iconfont icon-iconcha js-z-pop-close"></i></h4>
+        </div>
+        <div class="pop-con">
+            <div class="pop-wrap">
+                <h4 class="h4-header">商品基础信息</h4>
+                <div class="pop-container">
+                    <table class="y7-table">
+                        <tbody>
+                            <tr>
+                                <td>商品编号</td>
+                                <td class="y7-con">111111111</td>
+                                <td>商品名称</td>
+                                <td class="y7-con"></td>
+                            </tr>
+                            <tr>
+                                <td>商品描述</td>
+                                <td class="y7-con"></td>
+                                <td>商品状态</td>
+                                <td class="y7-con"></td>
+                            </tr>
+                            <tr>
+                                <td>归属广告主</td>
+                                <td class="y7-con"></td>
+                                <td>商品类别</td>
+                                <td class="y7-con"></td>
+                            </tr>
+                            <tr>
+                                <td>生效时间</td>
+                                <td class="y7-con"></td>
+                                <td>失效时间</td>
+                                <td class="y7-con"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="pop-wrap">
+                <h4 class="h4-header">移动端素材</h4>
+                <div class="pop-container">
+                    <div class="material-show">
+                        <div>
+                            <p class="img-p1">logo位素材（195*195）</p>
+                            <div class="img-wrap">
+                                <img src="img/material-logo.png" alt="">
+                            </div>
+                        </div>
+                        <div>
+                            <p class="img-p2">中奖位素材（220*150）</p>
+                            <div class="img-wrap img-wrap1">
+                                <img src="img/material-win.png" alt="">
+                            </div>
+                        </div>
+                        <form class="form-group material-form">
+                            <div class="form-line">
+                                <label>跳转链接：</label>
+                                <input class="form-input" type="text" name="">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="pop-wrap">
+                <h4 class="h4-header">审批信息</h4>
+                <div class="pop-container">
+                    <div class="form-group y20">
+                        <div class="form-line">
+                            <label>审批结果：</label>
+                            <div class="radio-wrap">
+                                <div>
+                                    <label>
+                                        <input type="radio" name="sex" checked=""> 不限
+                                    </label>
+                                </div>
+                                <div>
+                                    <label>
+                                        <input type="radio" name="sex"> 审批通过
+                                    </label>
+                                </div>
+                                <div>
+                                    <label>
+                                        <input type="radio" name="sex"> 审批不通过
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-line">
+                            <label for="">审批意见：</label>
+                            <textarea class="form-textarea" name=""></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--javascript-->
+    <script src=./js/jquery-1.10.2.min.js></script>
+    <script src="./js/jquery.placeholder.min.js"></script>
+    <script src=./js/jquery.datetimepicker.js></script>
+
+    <script src="js/select.js"></script>
+    <script src="js/tab.js"></script>
+    <script src="js/pages.js"></script>
+    <!--[if IE 8]>
+        <script src="js/PIE.js"></script>
+        <script src="js/suitableIe.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+    $(function() {
+        $('input, textarea').placeholder();
+        var x = DiySelect({
+            selector: $('#select'),
+            series: [{
+                text: '所有',
+                val: '1',
+            }, {
+                text: '所有',
+                val: '2',
+            }, {
+                text: '所有',
+                val: '3',
+            }, {
+                text: '所有',
+                val: '4',
+            }]
+        });
+        var x = DiySelect({
+            selector: $('#select1'),
+            tip:'所有',  
+            series: [{
+                text: '所有',
+                val: '1',
+            }, {
+                text: '所有',
+                val: '2',
+            }, {
+                text: '所有',
+                val: '3',
+            }, {
+                text: '所有',
+                val: '4',
+            }]
+        });
+        var x = DiySelect({
+            selector: $('#select2'),
+            tip:'所有',  
+            series: [{
+                text: '所有',
+                val: '1',
+            }, {
+                text: '所有',
+                val: '2',
+            }, {
+                text: '所有',
+                val: '3',
+            }, {
+                text: '所有',
+                val: '4',
+            }]
+        })
+
+        var startOpt = {
+                lang: 'ch',
+                weekStart: 1,
+                autoclose: true,
+                forceParse: false,
+                timepicker: false,
+                format: 'Y/m/d',
+                onShow: function(ct) {
+                    this.setOptions({
+                        maxDate: jQuery(".endTime").val() ? toChangeDate(jQuery(".endTime").val()) : false
+                    })
+                }
+
+            },
+            endOpt = {
+                weekStart: 1,
+                lang: 'ch',
+                autoclose: true,
+                forceParse: false,
+                timepicker: false,
+                format: 'Y/m/d',
+                onShow: function(ct) {
+                    this.setOptions({
+                        minDate: jQuery(".startTime").val() ? toChangeDate(jQuery(".startTime").val()) : false,
+                        maxDate: false
+                    })
+                }
+
+            };
+
+        $(".startTime").datetimepicker(startOpt);
+        $(".endTime").datetimepicker(endOpt);
+
+        function toChangeDate(text) {
+            var str = text.replace(/年|月|日/gi, '/');
+            return str.substr(0, str.length - 1);
+        }
+
+        $(".y1-time-tab li").click(function() {
+            $(this).addClass("y1-active").siblings().removeClass("y1-active");
+        })
+
+        //表格
+        var y1data = [];
+        for (var i = 0; i < 50; i++) {
+            y1data[i] = {
+                id: i + 1,
+                name1: "vivo",
+                name2: "有效",
+                name3: "vivo",
+                name4: "广州珠海",
+                name5: "13025477756",
+                name6: "2017/3/29",
+                opt: ''
+            };
+        }
+        var cs = new table({
+            "tableId": "y1tablenn", //必须
+            "headers": ["序号", "广告主名称", "状态", "资质明晨", "联系人", "联系电话", "创建时间","操作"], //必须
+            "data": y1data, //必须
+            "displayNum": 8, //必须  默认 10，每页多少数
+            "groupDataNum": 10 ,//可选  默认 10,最大页数
+            trunPageCallBack:function(){
+                //初始化表格中的下拉框
+                DiySelect({
+                    suitTable:true,
+                    tip:'详情',
+                    selector:$('#y1tablenn .ykytd-opt'),
+                    series:[{text:'弹框'},{text:'删除'}],
+                    callback:function(item){
+                        if($(item).html()=='弹框'){
+                            $('.pop-info').show();
+                            $('.mask').show();
+                        }
+                    }
+                })
+            }
+        });
+        
+
+         $('.js-z-pop-close').click(function() {
+            $(this).parents('.pop').hide();
+            $('.mask').hide();
+        });
+
+        $('.form-input').keypress(function(e){
+            if(e.keyCode==13){
+                e.preventDefault();
+            }
+        })
+    })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>投放排行分析</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <link rel="stylesheet" href="./css/jquery.datetimepicker.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+/*        写在页面里提醒人以后命名时千万不要忘记改
+*/        
+        #select1 .dropdwon ,#select2 .dropdwon {
+            width: 290px;
+        }
+        #select1,#select2 {
+            width: 290px;
+        }
+        #select1 .dropdwon-header p,#select2 .dropdwon-header p{
+            max-width: 290px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-img"><img src="img/logo.png" alt=""></div>
+            </div>
+            <div class="header-in">
+                <p class="user">口袋小鸟</p>
+                <p class="exit"><i class="iconfont icon-xiaoxi"></i>消息</p>
+                <p class="exit"><i class="iconfont icon-tuichu"></i>退出</p>
+            </div>
+        </div>
+        <div class="movable">
+            <div class="fixed-nav">
+                <div class="nav">
+                    <div>
+                        <a href="index.html"><i class="iconfont icon-shouye01"></i><p>首页</p></a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <i class="iconfont icon-jingzhuntoufang"></i>
+                            <p>惊喜投放</p>
+                        </a>
+                        <ul class="second-nav">
+                            <li><a href="activity-manage.html">活动管理</a></li>
+                            <li><a href="mer-control.html">商品管理</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <i class="iconfont icon-tongji"></i>
+                            <p>统计报表</p>
+                        </a>
+                        <ul class="second-nav">
+                            <li><a href="effect-analysis.html">投放效果分析</a></li>
+                            <li><a class="active" href="rank-analysis.html">投放排行分析</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <i class="iconfont icon-renqun"></i>
+                            <p>人群管理</p>
+                        </a>
+                        <ul class="second-nav">
+                            <li><a href="people-orientation.html">人群定向</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <i class="iconfont icon-guanli"></i>
+                            <p>管理</p>
+                        </a>
+                        <ul class="second-nav">
+                            <li><a href="adver-manage.html">广告主管理</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab tab-slide">
+                <ul class="tab-header">
+                    <li class="tab-click">中奖数排行</li>
+                    <li>点击率排行</li>
+                    <li>投放人群重合度排行</li>
+                </ul>
+                <div class="tab-con">
+                    <!-- 中奖数排行 -->
+                    <div class="movable-con display-block">
+                        <!--表单-->
+                        <form class="form-group">
+                            <div class="form-line">
+                                <label for="">有效时间：</label>
+                                <div>
+                                    <div class="calendar-wrap">
+                                        <input class="form-input form-calendar y1-time startTime-winning" type="text" name="" placeholder="起始时间">
+                                    </div>
+                                    <p class="">到</p>
+                                    <div class="calendar-wrap">
+                                        <input class="form-input form-calendar y1-time endTime-winning" type="text" name="" placeholder="结束时间">
+                                    </div>
+                                    <ul class="y1-time-tab">
+                                        <li class="y1-active">昨日</li>
+                                        <li>近7日</li>
+                                        <li>近30日</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="form-line">
+                                <label for="">投放媒体：</label>
+                                <div>
+                                    <ul class="y1-time-tab y1-no">
+                                        <li class="y1-active">所有</li>
+                                        <li>移动端</li>
+                                        <li>PC端</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="form-line">
+                                <label for="">投放媒体：</label>
+                                <div>
+                                    <ul class="y1-time-tab y1-no">
+                                        <li class="y1-active">全省</li>
+                                        <li>金华</li>
+                                        <li>宁波</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
+                        <!--表格-->
+                        <div class="table-con">
+                            <table id="y1table111" class="datatable table-box"></table>
+                        </div>
+                    </div>
+                    <!-- 点击率排行 -->
+                    <div class="movable-con">
+                        <!--表单-->
+                        <form class="form-group">
+                            <div class="form-line">
+                                <label class="y1-leb">时间：</label>
+                                <div>
+                                    <div class="calendar-wrap">
+                                        <input class="form-input form-calendar y1-time startTime-click" type="text" name="" placeholder="起始时间">
+                                    </div>
+                                    <p class="">到</p>
+                                    <div class="calendar-wrap">
+                                        <input class="form-input form-calendar y1-time endTime-click" type="text" name="" placeholder="结束时间">
+                                    </div>
+                                    <ul class="y1-time-tab">
+                                        <li class="y1-active">昨日</li>
+                                        <li>近7日</li>
+                                        <li>近30日</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="form-line">
+                                <label class="y1-leb">投放媒体：</label>
+                                <div>
+                                    <ul class="y1-time-tab y1-no">
+                                        <li class="y1-active">所有</li>
+                                        <li>移动端</li>
+                                        <li>PC端</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="form-line">
+                                <label class="y1-leb">投放媒体：</label>
+                                <div>
+                                    <ul class="y1-time-tab y1-no">
+                                        <li class="y1-active">全省</li>
+                                        <li>金华</li>
+                                        <li>宁波</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
+                        <!--表格-->
+                        <div class="table-con">
+                            <table id="y1table2" class="datatable table-box"></table>
+                        </div>
+                    </div>
+                    <!-- 投放人群重合度 -->
+                    <div class="movable-con">
+                        <!--表单-->
+                        <form class="form-group y4-form clearfix y12-form">
+                            <div class="form-line fl y12-form-line2">
+                                <label for="">广告主：</label>
+                                <div id="select1"></div>
+                            </div>
+                            <div class="form-line fl y12-form-line2">
+                                <label for="">惊喜活动：</label>
+                                <div id="select2"></div>
+                            </div>
+                        </form>
+                        <!--表格-->
+                        <div class="table-con">
+                            <table id="y1table33" class="datatable table-box"></table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--javascript-->
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src=" js/jquery.datetimepicker.js"></script>
+    <script src=" js/common.js"></script>
+    <script src="js/select.js"></script>
+    <script src="js/tab.js"></script>
+    <script src="js/pages.js"></script>
+    <!--[if IE 8]>
+        <script src="js/PIE.js"></script>
+        <script src="js/suitableIe.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript">
+    $(function() {
+            
+        var x = DiySelect({
+            selector: $('#select1'),
+            tip:'请选择广告主',
+            series: [{
+                text: '孙',
+                val: '1',
+            }, {
+                text: '王',
+                val: '2',
+            }, {
+                text: '兆',
+                val: '3',
+            }, {
+                text: '李',
+                val: '4',
+            }]
+        })
+        var y = DiySelect({
+            selector: $('#select2'),
+            tip:'默认选中一个',
+            series: [{
+                text: '孙',
+                val: '1',
+            }, {
+                text: '王',
+                val: '2',
+            }, {
+                text: '兆',
+                val: '3',
+            }, {
+                text: '李',
+                val: '4',
+            }]
+        })
+        //中奖数时间插件
+        $(".startTime-winning").datetimepicker({
+            lang: 'ch',
+            timepicker:false,
+            format: 'Y/m/d',
+            onShow: function(ct) {
+                this.setOptions({
+                    maxDate: $(".endTime-winning").val() ? $(".endTime-winning").val():false
+                })
+            }
+        })
+        $(".endTime-winning").datetimepicker({
+            lang: 'ch',
+            timepicker:false,
+            format: 'Y/m/d',
+            onShow: function(ct) {
+                this.setOptions({
+                    minDate: $(".startTime-winning").val() ? $(".startTime-winning").val() : false,
+                })
+            }
+        })
+        $(".startTime-winning").val(formatDate(new Date(),'yyyy/MM/dd'))
+        $(".endTime-winning").val(formatDate(new Date(),'yyyy/MM/dd'))
+
+        //点击率
+        $(".startTime-click").datetimepicker({
+            lang: 'ch',
+            timepicker:false,
+            format: 'Y/m/d',
+            onShow: function(ct) {
+                this.setOptions({
+                    maxDate: $(".endTime-click").val() ? $(".endTime-click").val():false
+                })
+            }
+        })
+        $(".endTime-click").datetimepicker({
+            lang: 'ch',
+            timepicker:false,
+            format: 'Y/m/d',
+            onShow: function(ct) {
+                this.setOptions({
+                    minDate: $(".startTime-click").val() ? $(".startTime-click").val() : false,
+                })
+            }
+        })
+        $(".startTime-click").val(formatDate(new Date(),'yyyy/MM/dd'))
+        $(".endTime-click").val(formatDate(new Date(),'yyyy/MM/dd'))
+        
+        //中奖数表格
+        var y1data = [];
+        for (var i = 0; i < 50; i++) {
+            y1data[i] = {
+                id: i + 1,
+                name1: "口袋小鸟",
+                name2: "安溪铁观音",
+                name3: "100000",
+                name4: "56.3%",
+                opt: '<div class="dropdwon dropdwon-table"><div class="dropdwon-header"><p class="dropdwon-text">详情</p><i class="iconfont icon-sanjiao"></i></div>'
+            };
+        }
+        var cs = new table({
+            "tableId": "y1table111", //必须
+            "headers": ["序号", "广告主", "活动名称", "中奖数（曝光）", "占总中奖数比例（%）", "操作"], //必须
+            "data": y1data, //必须
+            "displayNum": 8, //必须  默认 10，每页多少数
+            "groupDataNum": 10 //可选  默认 10,最大页数
+        });
+
+        // 点击率排行表格
+        var y2data = [];
+        for (var i = 0; i < 50; i++) {
+            y2data[i] = {
+                id: i + 1,
+                name1: "口袋小鸟",
+                name2: "安溪铁观音",
+                name3: "100000",
+                name4: "56.3%",
+                opt: '<div class="dropdwon dropdwon-table"><div class="dropdwon-header"><p class="dropdwon-text">详情</p><i class="iconfont icon-sanjiao"></i></div>'
+            };
+        }
+        var cs = new table({
+            "tableId": "y1table2", //必须
+            "headers": ["序号", "广告主", "活动名称", "领奖数（点击）", "点击率（%）", "操作"], //必须
+            "data": y2data, //必须
+            "displayNum": 8, //必须  默认 10，每页多少数
+            "groupDataNum": 10 //可选  默认 10,最大页数
+        });
+        //投放人群重合度表格
+        var y3data = [];
+        for (var i = 0; i < 50; i++) {
+            y3data[i] = {
+                id: i + 1,
+                name1: "口袋小鸟",
+                name2: "安溪铁观音",
+                name3: "100000",
+                name4: "100000",
+                name5: "500000",
+                name6: "56.3%"
+            };
+        }
+        var cs = new table({
+            "tableId": "y1table33", //必须
+            "headers": ["序号", "广告主", "活动名称", "投放人群数", "我的人群数", "重合人数","重合度"], //必须
+            "data": y3data, //必须
+            "displayNum": 8, //必须  默认 10，每页多少数
+            "groupDataNum": 10 //可选  默认 10,最大页数
+        });
+    })
+    </script>
+</body>
+</html>

@@ -1,0 +1,939 @@
+/*-- yanky start--*/
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+table {
+    width: 100%;
+}
+
+
+/*--表S--*/
+
+.table-con {
+    width: 100%;
+    height: auto;
+}
+
+.table-box {
+    width: 100%;
+    height: auto;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+.table-box th {
+    height: 40px;
+    padding: 10px;
+    text-align: center;
+    word-break: break-all;
+    color: #fff;
+    background-color: #3c9;
+}
+
+.table-box td {
+    height: 40px;
+    padding: 5px;
+    text-align: center;
+    word-break: break-all;
+}
+
+.table-foot {
+    width: 100%;
+    height: 42px;
+    padding-right: 20px;
+    line-height: 40px;
+    text-align: right;
+    background-color: #fff;
+}
+
+.table-foot span,
+.table-foot i {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.click-color {
+    color: #ff802c;
+}
+
+#spanPre,
+#y18spanPre,
+#spanNext,
+#y18spanNext,
+#spanLast #y18spanLast {
+    color: #ff802c;
+}
+
+.data-all {
+    margin-right: 2px;
+}
+
+#spanPageNum,
+#y18spanPageNum {
+    display: none;
+}
+
+
+/*--表E--*/
+
+
+/*--y1表单S--*/
+
+.y1-time {
+    width: 112px;
+    padding-left: 33px;
+    padding-top: 3px;
+}
+
+.y1-time-tab {
+    display: inline-block;
+    width: 220px;
+    height: 25px;
+    /*padding-top: 2px;*/
+    padding-left: 16px;
+    vertical-align: middle;
+    border-left: 1px solid #c9c9c9;
+}
+
+.y1-time-tab li {
+    display: inline-block;
+    width: 64px;
+    line-height: 25px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.y1-active {
+    color: #fff;
+    background-color: #ff802c;
+}
+
+.y1-no {
+    padding-left: 0;
+    border-left: none;
+}
+
+
+/*--y1表单E--*/
+
+
+/*--y2S--*/
+
+.y2-form {
+    width: 445px;
+}
+
+.y2-form label {
+    width: 110px;
+}
+
+.y2-form .form-input {
+    width: 330px;
+}
+
+.y2-foot {
+    width: 100%;
+    padding-top: 30px;
+    padding-right: 5px;
+    text-align: right;
+}
+
+.y2-btn {
+    line-height: 20px;
+    display: inline-block;
+    min-width: 60px;
+    margin: 2px;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 400;
+    cursor: pointer;
+    vertical-align: middle;
+    white-space: nowrap;
+    color: #fff;
+    background-color: #ff802c;
+    background-image: none;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+
+
+/*--y2E--*/
+
+
+/*--y3S--*/
+
+.y3-time {
+    width: 140px;
+    padding-top: 3px;
+    padding-left: 40px;
+}
+
+.y3-time2 {
+    width: 66px;
+}
+
+.y3-form label {
+    width: 115px;
+}
+
+.y3-form .y3-tit1,
+.y3-form .y3-tit2,
+.y3-form .y3-tit3,
+.y3-form .y3-tit4 {
+    width: auto;
+    margin-left: 120px;
+    padding-bottom: 25px;
+}
+
+.y34-form label {
+    width: 115px;
+    text-align: right;
+}
+
+.y34-form .y3-tit1,
+.y34-form .y3-tit2,
+.y34-form .y3-tit3,
+.y34-form .y3-tit4 {
+    width: auto;
+    margin-left: 120px;
+    padding-bottom: 25px;
+}
+
+.y3-form h3 {
+    padding-left: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #ff802c;
+}
+
+.y3-tit2 li,
+.y3-tit3 li {
+    float: left;
+    margin-right: 50px;
+    padding-bottom: 25px;
+}
+
+.y3-tit2 .form-card,
+.y3-tit3 .form-card {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px;
+    text-align: center;
+    border: #c9c9c9 1px solid;
+    box-shadow: 2px 2px 5px #c9c9c9;
+}
+
+
+/*zbb 新添加的类*/
+
+.y3-tit2 .card-imgcon {
+    padding: 23px 15px 15px 15px;
+}
+
+.y3-tit2 .card-imgcon img {
+    width: 165px;
+    height: 125px;
+    margin-bottom: 12px;
+}
+
+
+/*zbb*/
+
+.y3-tit2 .form-card.active,
+.y3-tit3 .form-card.active {
+    padding-top: 23px;
+    color: #ff802c;
+    border: #ff802c 2px solid;
+    box-shadow: 2px 2px 5px #fc9;
+}
+
+
+/*--zbb 模态框--*/
+
+.modal-con {
+    position: fixed;
+    z-index: 10;
+    top: 50px;
+    left: 50%;
+    display: none;
+    width: 640px;
+    height: 585px;
+    margin-left: -320px;
+    border: 1px solid #e4e4e4;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+.modal-title {
+    height: 38px;
+    padding-right: 17px;
+    padding-left: 17px;
+    font-weight: bold;
+    line-height: 38px;
+    background-color: #f6f6f6;
+}
+
+.modal-title i {
+    float: right;
+}
+
+.form-line .modal-select {
+    width: 55%;
+}
+
+.modal-select .dropdwon {
+    width: 125px;
+}
+
+.dropdwon-header p {
+    text-align: left;
+    max-width: 210px;
+}
+
+.y3-box2 i {
+    margin-right: 0;
+    font-size: 60px;
+    line-height: 170px;
+    text-align: center;
+    opacity: .6;
+}
+
+.y3-box2 li {
+    position: relative;
+}
+
+.y3-box2 p {
+    position: absolute;
+    top: 150px;
+    left: 51px;
+}
+
+.y3-form .y3-tit2 {
+    padding-bottom: 0;
+}
+
+.y3-tit3 .radio-wrap>div {
+    padding-left: 30px;
+}
+
+.y3-tit3 .radio-wrap {
+    width: 460px;
+}
+
+.y3-tit4 .form-line>label {
+    width: 155px;
+    max-width: 500px;
+}
+
+.y3-tit4 .form-input {
+    width: 140px;
+}
+
+.form-group .form-line {
+    width: auto;
+    height: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+/*--y4--新添加的类*/
+
+.y4-form {
+    padding: 10px 0px 10px 0;
+}
+
+.y4-form .form-input {
+    width: 215px;
+}
+
+
+/*--y5--*/
+
+.y5-table {
+    width: 340px;
+    height: auto;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+.y5-table .table-tit {
+    height: 33px;
+}
+
+.y5-table .table-tit1,
+.y5-tbody .y5-tbody1 {
+    text-align: left;
+}
+
+.y5-table .table-tit4,
+.y5-tbody .y5-tbody4 {
+    text-align: right;
+}
+
+.y5-tbody tr {
+    height: 33px;
+    font-size: 12px;
+    text-align: center;
+    border-top: 1px solid #d7d7d7;
+}
+
+
+/*--y7--*/
+
+.y7-table td {
+    width: 20%;
+    height: 40px;
+    padding-left: 5px;
+    border: 1px solid #d7d7d7;
+}
+
+.y7-table .y7-con {
+    width: 30%;
+}
+
+.y7-bom p {
+    display: inline-block;
+}
+
+.y7-h3 {
+    font-weight: bold;
+    color: #ff802c;
+}
+
+
+/*--y9--*/
+
+.small-select {
+    width: 95px;
+}
+
+.small-select .dropdwon,
+.medium-select .dropdwon {
+    width: 100%;
+}
+
+.medium-select {
+    width: 150px;
+}
+
+
+/*--y12--*/
+
+.y12-form .y12-form-line2 {
+    width: 390px;
+}
+
+.y12-form #select1,
+.y12-form #select2 {
+    width: 260px;
+}
+
+.y12-form .dropdwon {
+    width: 300px;
+}
+
+
+/*--y13--*/
+
+.y13-form label {
+    width: 70px;
+}
+
+.y13-form .y13-label2 {
+    width: 90px;
+}
+
+.y13-form .y13-form-line2 {
+    width: 320px;
+}
+
+.y12-form #select1,
+.y12-form #select2 {
+    width: 200px;
+}
+
+.y12-form .dropdwon {
+    width: 200px;
+}
+
+
+/*--y15--*/
+
+.y15-form label {
+    width: 90px;
+    padding-right: 20px;
+}
+
+.y15-form .radio-wrap>div {
+    padding-right: 30px;
+    padding-left: 0;
+}
+
+.y15-form .y15-child {
+    width: 100%;
+    padding-left: 90px;
+}
+
+.y15-form .y3-tit3 .radio-wrap {
+    width: 70%;
+}
+
+.y15-form .form-line {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.y15-child .box {
+    width: 70%;
+    height: 115px;
+    line-height: 115px;
+    text-align: center;
+    border: 1px solid #c9c9c9;
+    box-shadow: 2px 2px 5px #c9c9c9;
+}
+
+.y15-child .box p {
+    line-height: 115px;
+}
+
+.y15-form .y3-tit3 .form-input,
+.y15-form .y3-tit3 .form-textarea {
+    width: 42%;
+}
+
+
+/*--y16--*/
+
+.show-goods,
+.show-person {
+    background-color: #fff;
+}
+
+.y16-form .y3-tit2 .box,
+.y17-form .y3-tit3 .box,
+.show-goods {
+    width: 480px;
+    height: 175px;
+    padding-right: 18px;
+    border: #c9c9c9 1px solid;
+    box-shadow: 2px 2px 5px #c9c9c9;
+}
+
+.y3-form .send-goods-then,
+.y3-form .send-person-then {
+    display: none;
+}
+
+.y16-form .boxl,
+.show-goods .boxl {
+    width: 45%;
+    line-height: 175px;
+    text-align: center;
+}
+
+.y16-form .boxr,
+.show-goods .boxr {
+    width: 55%;
+    padding-top: 45px;
+}
+
+.y16-form .boxr .p1,
+.show-goods .boxr .p1 {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #6b6b6b;
+}
+
+.y16-form .boxr .p2,
+.show-goods .boxr .p2 {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    color: #aeaeae;
+}
+
+.y16-form .boxr .p3,
+.y16-form .boxr .p4,
+.show-goods .boxr .p3,
+.show-goods .boxr .p4 {
+    font-size: 12px;
+    color: #3c9;
+}
+
+.y16-form .boxr i,
+.show-goods .boxr i {
+    font-size: 20px;
+    color: #3c9;
+}
+
+.y16-form .boxr .p4,
+.show-goods .boxr .p4 {
+    max-width: 138px;
+    padding-left: 20px;
+}
+
+.y16-form .btn-group,
+.show-goods .btn-group {
+    width: 100%;
+    padding-top: 0;
+    padding-right: 0;
+    text-align: right;
+}
+
+
+/*--y17--*/
+
+.y17-form .y17-tit3 .box {
+    height: 120px;
+    padding-top: 25px;
+    padding-left: 35px;
+}
+
+.show-person {
+    width: 480px;
+    height: 120px;
+    padding-top: 25px;
+    padding-right: 18px;
+    padding-left: 35px;
+    border: #c9c9c9 1px solid;
+    box-shadow: 2px 2px 5px #c9c9c9;
+}
+
+.show-person>div {
+    line-height: 40px;
+}
+
+.show-person .btn-group {
+    float: right;
+    width: auto;
+    padding: 0;
+}
+
+.y17-form .y17-tit3 .y17-lab {
+    padding-top: 25px;
+}
+
+.y17-form .btn-group {
+    width: auto;
+}
+
+.y17-form .y17-tit3 .boxp,
+.show-person .boxp {
+    padding-left: 28px;
+}
+
+
+/*--y18--*/
+
+.y18-table .btn {
+    color: #5e5e5e;
+    border-color: #c9c9c9;
+}
+
+.y18-trcolor {
+    background-color: #f8f8f8;
+}
+
+.details td {
+    height: 60px;
+    /*color: #5E5E5E;*/
+    padding-left: 100px;
+    text-align: left;
+}
+
+
+/*--y19--*/
+
+.y19-form #select {
+    width: 120px;
+}
+
+.y19-form #select .dropdwon {
+    width: 120px;
+}
+
+.y19-form .y4-form-line2 {
+    width: 200px;
+}
+
+.y19-box>div {
+    display: inline-block;
+    width: 70%;
+    vertical-align: middle;
+}
+
+.y19-box .box {
+    width: 480px;
+    height: 100px;
+    padding-right: 18px;
+}
+
+.y19-box .boxl {
+    width: 45%;
+    line-height: 100px;
+}
+
+.y19-box .boxr {
+    width: 55%;
+    padding-top: 10px;
+}
+
+.y19-table td {
+    text-align: left;
+}
+
+.y19border {
+    border: 2px solid #ffbf95;
+}
+
+
+/*-- yanky end--*/
+
+.backdrop-img {
+    width: 100%;
+    height: 100%;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    background-image: url('../img/bjTU.png');
+}
+
+.logo-img {
+    display: block;
+    margin: 0 auto;
+}
+
+.land-content {
+    width: 520px;
+    height: auto;
+    margin: 30px auto 0;
+    padding: 30px;
+    background-color: #3f4752;
+}
+
+.land-ad {
+    padding-bottom: 20px;
+    font-size: 18px;
+    font-weight: bolder;
+    text-align: center;
+    color: #fff;
+    border-bottom: 1px solid #666;
+}
+
+.register-content {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 20px 60px 20px;
+}
+
+.logio-text {
+    position: absolute;
+    top: 20px;
+    left: 60px;
+    width: 100%;
+    height: auto;
+    font-size: 18px;
+    font-weight: bolder;
+    color: #dedede;
+}
+
+.login-modularity {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+.forget-message {
+    width: 100%;
+    height: auto;
+    padding-bottom: 6px;
+    font-size: 12px;
+    text-align: right;
+    color: #33b88e;
+}
+
+.entry-message {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding-left: 40px;
+    background-color: #373945;
+}
+
+.entry-message input {
+    width: 100%;
+    height: 32px;
+    padding-right: 20px;
+    padding-left: 20px;
+    line-height: 32px;
+    background-color: #373945;
+}
+
+.save-icon {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 40px;
+    height: 22px;
+    padding-left: 11px;
+    line-height: 22px;
+    border-right: 1px solid #4a4a4e;
+}
+
+::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: #626368;
+}
+
+:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #626368;
+}
+
+::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #626368;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color: #626368;
+}
+
+.circle-button {
+    width: 100%;
+    height: auto;
+}
+
+.circle-button button {
+    width: 45%;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: bolder;
+    line-height: 36px;
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
+    background-color: #ff802c;
+}
+
+.circle-button button:hover {
+    background-color: #f76a0c;
+}
+
+.datatable td.paging .click-color {
+    color: #ff802c;
+}
+
+#y1table111 .ykytd-name3,
+#y12table1 .ykytd-name4,
+#y13table1 .ykytd-name4,
+#y1table2 .ykytd-name4,
+#y1table33 .ykytd-name4,
+#y14table1 .ykytd-name3 {
+    color: #ff802c;
+}
+
+#y19table1 thead {
+    display: none;
+}
+
+.datatable tbody tr.evenrow td {
+    background-color: #f4f4f4;
+}
+
+.y4-form>div {
+    padding-right: 20px;
+}
+
+
+/*
+zhoubb---2017.2.23改动
+
+.modal-con高度写死，最小高度去掉
+
+.modal-select .dropdwon{
+width: 125px;
+}宽度有改动
+
+.y4-form去掉背景颜色
+
+*/
+
+
+/**
+ * 在people-orientation作用的特殊css
+ * added by sunqixiong 
+ */
+
+.status-select .dropdwon {
+    width: 100px;
+}
+
+.placeholder {
+    color: #9e9e9e;
+}
+
+:-moz-placeholder {
+    opacity: 1;
+    /* Mozilla Firefox 4 to 18 */
+    color: #9e9e9e;
+}
+
+::-moz-placeholder {
+    opacity: 1;
+    /* Mozilla Firefox 19+ */
+    color: #9e9e9e;
+}
+
+input:-ms-input-placeholder {
+    opacity: 1;
+    color: #9e9e9e;
+}
+
+input::-webkit-input-placeholder {
+    opacity: 1;
+    color: #9e9e9e;
+}
+
+.effect-analysis-message-detail {
+    position: absolute;
+    top: 86px;
+    right: 36px;
+}
+
+#indextable .paging {
+    display: none;
+}
+
+.y1-leb {
+    width: 80px;
+    text-align: right;
+}
+
+
+/**
+ * added by sunqixiong
+ */
+
+.box-padding-repair {
+    padding-top: 10px;
+    padding-left: 70px !important;
+}
+
+.repair-checkbox-inpeople {
+    padding-left: 20px;
+}
+
+
+/**
+ * ended
+ */
